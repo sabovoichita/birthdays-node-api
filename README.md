@@ -1,62 +1,53 @@
-# node-api
-
 Node JS CRUD API example
 
 - [x] store info in JSON file
-- [ ] store info in DB (MYSQL)
+- [x] store info in DB (MYSQL)
 
 ## Install
 
-```sh
-git clone https://github.com/sabovoichita/Birthdays-node-api.git
-cd node-api
-npm install
-```
+    @@ -24,13 +24,15 @@ npm run devstart
 
-## JS Usage
-
-```sh
-npm run devstart
-```
-
-### JSON file as storage
-
-Birthday members are stored inside [data/birthdays.json](data/birthdays.json)
+Team members are stored inside [data/team.json](data/team.json)
 
 ```js
-fetch("http://localhost:3000/birthdays-json", {
+// GET teams-json
+fetch("http://localhost:3000/teams-json", {
   method: "GET",
   headers: {
     "Content-Type": "application/json"
   }
 });
 
-fetch("http://localhost:3000/birthdays-json/create", {
+// POST teams-json/create
+fetch("http://localhost:3000/teams-json/create", {
   method: "POST",
   headers: {
-    "Content-Type": "application/json"
-  },
+	@@ -39,6 +41,7 @@ fetch("http://localhost:3000/teams-json/create", {
   body: JSON.stringify({ firstName: "Your", lastName: "Name", gitHub: "youaredev" })
 });
 
-fetch("http://localhost:3000/birthdays-json/delete", {
+// DELETE teams-json/delete
+fetch("http://localhost:3000/teams-json/delete", {
   method: "DELETE",
   headers: {
-    "Content-Type": "application/json"
-  },
+	@@ -47,6 +50,7 @@ fetch("http://localhost:3000/teams-json/delete", {
   body: JSON.stringify({ id: "fedcba1610309909431" })
 });
 
-fetch("http://localhost:3000/birthdays-json/update", {
+// PUT teams-json/update
+fetch("http://localhost:3000/teams-json/update", {
   method: "PUT",
   headers: {
-    "Content-Type": "application/json"
-  },
-  body: JSON.stringify({
-    id: "fedcba1610310163146",
-    firstName: "UpdatedName",
-    lastName: "Name",
-    gitHub: "youaredev"
+	@@ -60,3 +64,12 @@ fetch("http://localhost:3000/teams-json/update", {
   })
 });
 ```
+
+### DB (MySQL) as storage
+
+Team members are stored mysql
+
+- configure user & pass for mysql connection [routes/teams-db.js](routes/teams-db.js)
+- create a database named **teams**
+- run [http://localhost:3000/teams/install](http://localhost:3000/teams/install)
+- now you can any other CRUD operations (the same as for json but change url "teams-json" -> "teams")

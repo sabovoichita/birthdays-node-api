@@ -5,40 +5,40 @@ Node JS CRUD API example
 
 ## Install
 
-    @@ -24,13 +24,15 @@ npm run devstart
+    npm run devstart
 
-Team members are stored inside [data/team.json](data/team.json)
+Team members are stored inside [data/birthday.json](data/birthday.json)
 
 ```js
-// GET teams-json
-fetch("http://localhost:3000/teams-json", {
+// GET birthdays-json
+fetch("http://localhost:3000/birthdays-json", {
   method: "GET",
   headers: {
     "Content-Type": "application/json"
   }
 });
 
-// POST teams-json/create
-fetch("http://localhost:3000/teams-json/create", {
+// POST birthdays-json/create
+fetch("http://localhost:3000/birthdays-json/create", {
   method: "POST",
   headers: {
-	@@ -39,6 +41,7 @@ fetch("http://localhost:3000/teams-json/create", {
+	@@ -39,6 +41,7 @@ fetch("http://localhost:3000/birthdays-json/create", {
   body: JSON.stringify({ firstName: "Your", lastName: "Name", gitHub: "youaredev" })
 });
 
-// DELETE teams-json/delete
-fetch("http://localhost:3000/teams-json/delete", {
+// DELETE birthdays-json/delete
+fetch("http://localhost:3000/birthdays-json/delete", {
   method: "DELETE",
   headers: {
-	@@ -47,6 +50,7 @@ fetch("http://localhost:3000/teams-json/delete", {
+	@@ -47,6 +50,7 @@ fetch("http://localhost:3000/birthdays-json/delete", {
   body: JSON.stringify({ id: "fedcba1610309909431" })
 });
 
-// PUT teams-json/update
-fetch("http://localhost:3000/teams-json/update", {
+// PUT birthdays-json/update
+fetch("http://localhost:3000/birthdays-json/update", {
   method: "PUT",
   headers: {
-	@@ -60,3 +64,12 @@ fetch("http://localhost:3000/teams-json/update", {
+	@@ -60,3 +64,12 @@ fetch("http://localhost:3000/birthdays-json/update", {
   })
 });
 ```
@@ -47,7 +47,7 @@ fetch("http://localhost:3000/teams-json/update", {
 
 Team members are stored mysql
 
-- configure user & pass for mysql connection [routes/teams-db.js](routes/teams-db.js)
-- create a database named **teams**
-- run [http://localhost:3000/teams/install](http://localhost:3000/teams/install)
-- now you can any other CRUD operations (the same as for json but change url "teams-json" -> "teams")
+- configure user & pass for mysql connection [routes/birthdays-db.js](routes/birthdays-db.js)
+- create a database named **birthdays**
+- run [http://localhost:3000/birthdays/install](http://localhost:3000/birthdays/install)
+- now you can any other CRUD operations (the same as for json but change url "birthday-json" -> "birthdays")

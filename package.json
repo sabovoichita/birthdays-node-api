@@ -1,0 +1,14 @@
+{
+  "name": "birthdays-node-api",
+  "version": "1.0.0",
+  "description": "Node JS CRUD API example",
+  "private": true,
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./bin/www"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
